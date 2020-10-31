@@ -11,7 +11,16 @@ import SwiftUI
 struct LunaApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabView{
+                ContentView()
+                    .environmentObject(HomePageViewModel())
+            }
         }
+    }
+}
+
+struct LunaApp_Previews: PreviewProvider {
+    static var previews: some View {
+        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
     }
 }
