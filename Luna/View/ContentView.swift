@@ -16,7 +16,7 @@ struct ContentView: View {
                 List (homePageViewModel.articles) { article in
                     ArticleRow(articleVM: article)
                 }
-            }
+            }.navigationBarTitle("Home")
         }
         
     }
