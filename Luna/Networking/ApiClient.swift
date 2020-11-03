@@ -9,27 +9,24 @@ import Foundation
 
 public struct ApiClient {
     
-    static func HTTPget(url: String) {
+    static func HTTPget(url: String, articlesCompletationHandler: @escaping ([Article]?, Error?) -> Void) {
         let session = URLSession.shared
+//        @EnvironmentObject var 
         let url = URL(string: url)!
         let task = session.dataTask(with: url, completionHandler: { data, response, error in
-            // Check the response
-            print(response)
-            
             // Check if an error occured
             if error != nil {
                 // HERE you can manage the error
-                print(error)
                 return
             }
             
-    //        // Serialize the data into an object
             do {
-                let json = try JSONDecoder().decode([Article].self, from: data! )
-//                   let json = try JSONSerialization.jsonObject(with: data!, options: [])
-                print(json)
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let json = try decoder.decode([Article].self, from: data! )
+                articlesCompletationHandler(json, nil)
             } catch {
-                print("Error during JSON serialization: \(error.localizedDescription)")
+                print("Error during JSON serialization: \(error)")
             }
         })
         task.resume()

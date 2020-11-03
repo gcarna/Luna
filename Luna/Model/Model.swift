@@ -11,15 +11,15 @@ struct Article: Codable {
     var title: String
     var articleUri: String
     var category:String
-    var content: String
+    var content: String?
     var isFrontPage: Bool
     var mainTitle: String
     var picUri: String
-    var pubblicationDate: String
+    var publicationDate: String
     
     
-    init(title: String, subTitle: String, articleUri: String, category: String, content: String, isFrontPage: Bool,
-         mainTitle: String, picUri: String, pubblicationDate: String) {
+    init(title: String, articleUri: String, category: String, content: String?, isFrontPage: Bool,
+         mainTitle: String, picUri: String, publicationDate: String) {
         self.title = title
         self.articleUri = articleUri
         self.category = category
@@ -27,16 +27,15 @@ struct Article: Codable {
         self.isFrontPage = isFrontPage
         self.mainTitle = mainTitle
         self.picUri = picUri
-        self.pubblicationDate = pubblicationDate
+        self.publicationDate = publicationDate
     }
 }
 
 struct HomePage {
     var articles: [Article] = []
-    init() {
-        ApiClient.HTTPget("https://giove-stg.herokuapp.com/articles/home")
-        articles.append(Article(title: "TITOLO1", subTitle: "Sottotitolo1"))
-        articles.append(Article(title: "TITOLO2", subTitle: "Sottotitolo2"))
+    
+    init (){
+        articles.append(Article(title: "titolo", articleUri: "uri", category: "cat", content: "content", isFrontPage: true, mainTitle: "mainTitle", picUri: "uri", publicationDate: "article.publicationDate"))
     }
 }
 

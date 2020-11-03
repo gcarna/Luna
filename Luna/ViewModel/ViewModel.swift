@@ -19,12 +19,25 @@ class HomePageViewModel: ObservableObject {
     @Published var homepage: HomePage
     init() {
         self.homepage = HomePage()
-
     }
+    
     var articles: [ArticleViewModel] {
         get {
             homepage.articles.map(ArticleViewModel.init)
         }
     }
-
+    
+    func updateView() {
+        ApiClient.HTTPget(url: "https://giove-stg.herokuapp.com/articles/home",
+                          articlesCompletationHandler: { articles, error in
+                            if let articles = articles {
+                                DispatchQueue.main.async {
+                                    for article in articles[0...5] {
+                                        self.homepage.articles.append(Article(title: article.title, articleUri: article.articleUri, category: article.category, content: article.content, isFrontPage: article.isFrontPage, mainTitle: article.mainTitle, picUri: article.picUri, publicationDate: article.publicationDate))
+                                    }
+                                }
+                            }
+                            
+                          })
+    }
 }

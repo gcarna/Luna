@@ -13,7 +13,7 @@ struct DetailsView: View {
     var body: some View {
         HStack {
             Text(verbatim: article.title)
-            Text(verbatim: article.subTitle)
+            Text(verbatim: article.mainTitle)
         }
     }
 }

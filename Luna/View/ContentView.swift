@@ -10,19 +10,19 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var homePageViewModel: HomePageViewModel
-    //var model = Model()
     var body: some View {
-        NavigationView {
-            VStack {
-                List (homePageViewModel.articles) { article in
-                    NavigationLink(destination: DetailsView(article: article.article)){
-                        ArticleRow(articleVM: article)
-                    }
-                }
+        VStack {
+            Button(action: {
+                self.homePageViewModel.updateView()
+            }) {
+                Text("update")
+            }
+            List (homePageViewModel.articles) { article in
+                ArticleRow(articleVM: article)
             }
         }
-
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

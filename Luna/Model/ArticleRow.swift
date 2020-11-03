@@ -12,7 +12,7 @@ struct ArticleRow: View {
     var body: some View {
         HStack {
             Text(articleVM.article.title).bold()
-            Text(articleVM.article.subTitle)
+            Text(articleVM.article.mainTitle)
         }
     }
 }
