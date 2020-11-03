@@ -146,6 +146,7 @@
 		1EB76436254CF06900706370 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1EB7640E254B85BB00706370 /* ArticleRow.swift */,
 				1E22DD772547A65200BACE5E /* ContentView.swift */,
 				1EB76427254C78A300706370 /* DetailsView.swift */,
 			);
@@ -163,7 +164,6 @@
 		1EB76441254CF09400706370 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1EB7640E254B85BB00706370 /* ArticleRow.swift */,
 				1EB76401254B3C5500706370 /* Model.swift */,
 			);
 			path = Model;

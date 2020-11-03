@@ -19,6 +19,7 @@ class HomePageViewModel: ObservableObject {
     @Published var homepage: HomePage
     init() {
         self.homepage = HomePage()
+        self.updateView()
     }
     
     var articles: [ArticleViewModel] {

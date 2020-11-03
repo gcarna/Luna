@@ -33,9 +33,5 @@ struct Article: Codable {
 
 struct HomePage {
     var articles: [Article] = []
-    
-    init (){
-        articles.append(Article(title: "titolo", articleUri: "uri", category: "cat", content: "content", isFrontPage: true, mainTitle: "mainTitle", picUri: "uri", publicationDate: "article.publicationDate"))
-    }
 }
 
