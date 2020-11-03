@@ -12,12 +12,20 @@
 		1E22DD7D2547A65500BACE5E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E22DD7C2547A65500BACE5E /* Preview Assets.xcassets */; };
 		1E22DD882547A65600BACE5E /* LunaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E22DD872547A65600BACE5E /* LunaTests.swift */; };
 		1E22DD932547A65600BACE5E /* LunaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E22DD922547A65600BACE5E /* LunaUITests.swift */; };
+		1E2B30F92551A25E007A4F75 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2B30F82551A25E007A4F75 /* ApiService.swift */; };
+		1E2B30FE2551A2C0007A4F75 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2B30FD2551A2C0007A4F75 /* RequestBuilder.swift */; };
+		1E2B31032551A4E4007A4F75 /* ArticlesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2B31022551A4E4007A4F75 /* ArticlesListViewModel.swift */; };
+		1E2B310E2551A92F007A4F75 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2B310D2551A92F007A4F75 /* ApiError.swift */; };
+		1E2B31162551A94F007A4F75 /* ApiSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2B31152551A94F007A4F75 /* ApiSession.swift */; };
+		1E2B311C2551AA06007A4F75 /* GioveService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2B311B2551AA06007A4F75 /* GioveService.swift */; };
+		1E2B31212551AA9E007A4F75 /* GioveEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2B31202551AA9E007A4F75 /* GioveEndpoint.swift */; };
+		1E2B31412552176D007A4F75 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2B31402552176D007A4F75 /* ImageView.swift */; };
+		1E2B3149255217FF007A4F75 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2B3148255217FF007A4F75 /* ImageLoader.swift */; };
 		1EB76402254B3C5500706370 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB76401254B3C5500706370 /* Model.swift */; };
-		1EB76407254B80E600706370 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB76406254B80E600706370 /* ViewModel.swift */; };
-		1EB7640F254B85BB00706370 /* ArticleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB7640E254B85BB00706370 /* ArticleRow.swift */; };
-		1EB7641F254B8BAE00706370 /* LunaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB7641E254B8BAE00706370 /* LunaApp.swift */; };
+		1EB76407254B80E600706370 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB76406254B80E600706370 /* ArticleViewModel.swift */; };
+		1EB7640F254B85BB00706370 /* ArticleRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB7640E254B85BB00706370 /* ArticleRowView.swift */; };
+		1EB7641F254B8BAE00706370 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB7641E254B8BAE00706370 /* Main.swift */; };
 		1EB76428254C78A300706370 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB76427254C78A300706370 /* DetailsView.swift */; };
-		1EB76447254D736100706370 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB76446254D736100706370 /* ApiClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,12 +57,20 @@
 		1E22DD8E2547A65600BACE5E /* LunaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LunaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E22DD922547A65600BACE5E /* LunaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunaUITests.swift; sourceTree = "<group>"; };
 		1E22DD942547A65600BACE5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E2B30F82551A25E007A4F75 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		1E2B30FD2551A2C0007A4F75 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
+		1E2B31022551A4E4007A4F75 /* ArticlesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesListViewModel.swift; sourceTree = "<group>"; };
+		1E2B310D2551A92F007A4F75 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		1E2B31152551A94F007A4F75 /* ApiSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiSession.swift; sourceTree = "<group>"; };
+		1E2B311B2551AA06007A4F75 /* GioveService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GioveService.swift; sourceTree = "<group>"; };
+		1E2B31202551AA9E007A4F75 /* GioveEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GioveEndpoint.swift; sourceTree = "<group>"; };
+		1E2B31402552176D007A4F75 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		1E2B3148255217FF007A4F75 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		1EB76401254B3C5500706370 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		1EB76406254B80E600706370 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		1EB7640E254B85BB00706370 /* ArticleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRow.swift; sourceTree = "<group>"; };
-		1EB7641E254B8BAE00706370 /* LunaApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LunaApp.swift; sourceTree = "<group>"; };
+		1EB76406254B80E600706370 /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
+		1EB7640E254B85BB00706370 /* ArticleRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRowView.swift; sourceTree = "<group>"; };
+		1EB7641E254B8BAE00706370 /* Main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		1EB76427254C78A300706370 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
-		1EB76446254D736100706370 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +121,7 @@
 		1E22DD742547A65200BACE5E /* Luna */ = {
 			isa = PBXGroup;
 			children = (
-				1EB76445254D733A00706370 /* Networking */,
-				1EB7641E254B8BAE00706370 /* LunaApp.swift */,
+				1EB7641E254B8BAE00706370 /* Main.swift */,
 				1EB76441254CF09400706370 /* Model */,
 				1EB7643D254CF08600706370 /* ViewModel */,
 				1EB76436254CF06900706370 /* View */,
@@ -143,12 +158,25 @@
 			path = LunaUITests;
 			sourceTree = "<group>";
 		};
+		1E2B311A2551A99F007A4F75 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				1EB76445254D733A00706370 /* API */,
+				1E2B311B2551AA06007A4F75 /* GioveService.swift */,
+				1E2B31202551AA9E007A4F75 /* GioveEndpoint.swift */,
+				1E2B3148255217FF007A4F75 /* ImageLoader.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		1EB76436254CF06900706370 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1EB7640E254B85BB00706370 /* ArticleRow.swift */,
+				1E2B31402552176D007A4F75 /* ImageView.swift */,
+				1EB7640E254B85BB00706370 /* ArticleRowView.swift */,
 				1E22DD772547A65200BACE5E /* ContentView.swift */,
 				1EB76427254C78A300706370 /* DetailsView.swift */,
+				1E2B311A2551A99F007A4F75 /* Service */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -156,7 +184,8 @@
 		1EB7643D254CF08600706370 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				1EB76406254B80E600706370 /* ViewModel.swift */,
+				1EB76406254B80E600706370 /* ArticleViewModel.swift */,
+				1E2B31022551A4E4007A4F75 /* ArticlesListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -169,12 +198,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		1EB76445254D733A00706370 /* Networking */ = {
+		1EB76445254D733A00706370 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				1EB76446254D736100706370 /* ApiClient.swift */,
+				1E2B30F82551A25E007A4F75 /* ApiService.swift */,
+				1E2B30FD2551A2C0007A4F75 /* RequestBuilder.swift */,
+				1E2B310D2551A92F007A4F75 /* ApiError.swift */,
+				1E2B31152551A94F007A4F75 /* ApiSession.swift */,
 			);
-			path = Networking;
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,13 +338,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1EB7640F254B85BB00706370 /* ArticleRow.swift in Sources */,
+				1EB7640F254B85BB00706370 /* ArticleRowView.swift in Sources */,
 				1E22DD782547A65200BACE5E /* ContentView.swift in Sources */,
-				1EB7641F254B8BAE00706370 /* LunaApp.swift in Sources */,
+				1E2B3149255217FF007A4F75 /* ImageLoader.swift in Sources */,
+				1EB7641F254B8BAE00706370 /* Main.swift in Sources */,
+				1E2B31032551A4E4007A4F75 /* ArticlesListViewModel.swift in Sources */,
+				1E2B31212551AA9E007A4F75 /* GioveEndpoint.swift in Sources */,
+				1E2B30FE2551A2C0007A4F75 /* RequestBuilder.swift in Sources */,
+				1E2B310E2551A92F007A4F75 /* ApiError.swift in Sources */,
 				1EB76428254C78A300706370 /* DetailsView.swift in Sources */,
-				1EB76407254B80E600706370 /* ViewModel.swift in Sources */,
-				1EB76447254D736100706370 /* ApiClient.swift in Sources */,
+				1EB76407254B80E600706370 /* ArticleViewModel.swift in Sources */,
+				1E2B30F92551A25E007A4F75 /* ApiService.swift in Sources */,
+				1E2B31162551A94F007A4F75 /* ApiSession.swift in Sources */,
 				1EB76402254B3C5500706370 /* Model.swift in Sources */,
+				1E2B31412552176D007A4F75 /* ImageView.swift in Sources */,
+				1E2B311C2551AA06007A4F75 /* GioveService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

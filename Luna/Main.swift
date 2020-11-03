@@ -13,7 +13,7 @@ struct LunaApp: App {
         WindowGroup {
             TabView{
                 ContentView()
-                    .environmentObject(HomePageViewModel())
+                    .environmentObject(ArticlesListViewModel())
             }
         }
     }

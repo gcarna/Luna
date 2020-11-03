@@ -15,13 +15,12 @@ struct DetailsView: View {
             VStack {
                 Text(articleVM.article.title)
                     .font(.headline)
-                Spacer()
+                ImageView(urlToImage: articleVM.article.picUri)
                 Text(articleVM.article.content ?? "")
                     .lineLimit(nil)
                 Spacer()
             }
         }
-        
     }
 }
 

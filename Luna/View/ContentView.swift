@@ -9,16 +9,18 @@ import SwiftUI
 
 
 struct ContentView: View {
-    @EnvironmentObject var homePageViewModel: HomePageViewModel
+    @EnvironmentObject var viewModel: ArticlesListViewModel
+    
     var body: some View {
         NavigationView{
             VStack {
-                List (homePageViewModel.articles) { article in
-                    ArticleRow(articleVM: article)
+                List (self.viewModel.articlesListViewModel) { article in
+                    ArticleRowView(articleVM: article)
                 }
             }.navigationBarTitle("Home")
+        }.onAppear{
+            self.viewModel.getArticlesList()
         }
-        
     }
     
 }

@@ -6,7 +6,7 @@
 //
 
 import Foundation
-	
+
 struct Article: Codable {
     var title: String
     var articleUri: String
@@ -16,7 +16,6 @@ struct Article: Codable {
     var mainTitle: String
     var picUri: String
     var publicationDate: String
-    
     
     init(title: String, articleUri: String, category: String, content: String?, isFrontPage: Bool,
          mainTitle: String, picUri: String, publicationDate: String) {
@@ -30,8 +29,3 @@ struct Article: Codable {
         self.publicationDate = publicationDate
     }
 }
-
-struct HomePage {
-    var articles: [Article] = []
-}
-
