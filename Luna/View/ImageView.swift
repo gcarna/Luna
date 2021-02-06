@@ -1,40 +1,32 @@
-//
-//  ImageView.swift
-//  Luna
-//
-//  Created by Giuseppe Carnà on 03/11/2020.
-//
-
-import Foundation
 import SwiftUI
 
-struct ImageView: View {
+struct AsyncImage<Placeholder: View>: View {
+    @StateObject private var loader: ImageLoader
+    private let placeholder: Placeholder
+    private let image: (UIImage) -> Image
     
-    @ObservedObject var imageLoader: ImageLoader
+    init(
+        url: URL,
+        @ViewBuilder placeholder: () -> Placeholder,
+        @ViewBuilder image: @escaping (UIImage) -> Image = Image.init(uiImage:)
+    ) {
+        self.placeholder = placeholder()
+        self.image = image
+        _loader = StateObject(wrappedValue: ImageLoader(url: url, cache: Environment(\.imageCache).wrappedValue))
+    }
     
     var body: some View {
-        ZStack(alignment: .center) {
-            if imageLoader.image != nil {
-                Image(uiImage: imageLoader.image!)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
+        content
+            .onAppear(perform: loader.load)
+    }
+    
+    private var content: some View {
+        Group {
+            if loader.image != nil {
+                image(loader.image!)
             } else {
-                Rectangle()
-                    .foregroundColor(.gray)
+                placeholder
             }
         }
-    }
-    
-    init(urlToImage : String?) {
-        
-        self.imageLoader = ImageCache.shared.loaderFor(urlToImage: urlToImage)
-        
-    }
-    
-}
-
-struct ImageView_Previews: PreviewProvider {
-    static var previews: some View {
-        ImageView(urlToImage: "https://image.cnbcfm.com/api/v1/image/105727716-1549622925337gettyimages-1035615928.jpeg?v=1549622973")
     }
 }
