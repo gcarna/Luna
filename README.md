@@ -1,2 +1,2 @@
 # luna
-iOS client for reading news from ansa.it.
+iOS client for The Agenzia Nazionale Stampa Associata (ANSA).
