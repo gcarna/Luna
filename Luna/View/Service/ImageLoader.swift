@@ -1,54 +1,50 @@
-//
-//  ImageLoader.swift
-//  Luna
-//
-//  Created by Giuseppe Carnà on 03/11/2020.
-//
-
-import Foundation
 import Combine
 import UIKit
 
-class ImageCache {
-    
-    static let shared = ImageCache()
-    
-    var loaders: NSCache<NSString, ImageLoader> = NSCache()
-    
-    func loaderFor(urlToImage: String?) -> ImageLoader {
-        
-        guard let url = urlToImage, !url.isEmpty else {
-            return ImageLoader()
-        }
-        
-        if let cachedLoader = loaders.object(forKey: url as NSString) {
-            return cachedLoader
-        } else {
-            let imageLoader = ImageLoader()
-            imageLoader.load(urlString: url)
-            loaders.setObject(imageLoader, forKey: url as NSString)
-            return imageLoader
-        }
-    }
-}
-
-
-final class ImageLoader: ObservableObject {
-    
+class ImageLoader: ObservableObject {
     @Published var image: UIImage?
     
+    private(set) var isLoading = false
+    
+    private let url: URL
+    private var cache: ImageCache?
     private var cancellable: AnyCancellable?
     
-    func load(urlString: String) {
-        
-        cancellable = URLSession.shared.dataTaskPublisher(for: URL(string: urlString)!)
-            .map { UIImage(data: $0.data) }
-            .replaceError(with: nil)
-            .receive(on: DispatchQueue.main)
-            .assign(to: \.image, on: self)
+    private static let imageProcessingQueue = DispatchQueue(label: "image-processing")
+    
+    init(url: URL, cache: ImageCache? = nil) {
+        self.url = url
+        self.cache = cache
     }
     
     deinit {
+        cancel()
+    }
+    
+    func load() {
+        guard !isLoading else { return }
+        
+        cancellable = URLSession.shared.dataTaskPublisher(for: url)
+            .map { UIImage(data: $0.data) }
+            .replaceError(with: nil)
+            .handleEvents(receiveSubscription: { [weak self] _ in self?.onStart() },
+                          receiveCompletion: { [weak self] _ in self?.onFinish() },
+                          receiveCancel: { [weak self] in self?.onFinish() })
+            .subscribe(on: Self.imageProcessingQueue)
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] in self?.image = $0 }
+    }
+    
+    func cancel() {
         cancellable?.cancel()
     }
+    
+    private func onStart() {
+        isLoading = true
+    }
+    
+    private func onFinish() {
+        isLoading = false
+    }
+    
 }

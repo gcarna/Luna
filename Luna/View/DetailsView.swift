@@ -15,9 +15,14 @@ struct DetailsView: View {
             VStack {
                 Text(articleVM.article.title)
                     .font(.headline)
-                ImageView(urlToImage: articleVM.article.picUri)
-                Text(articleVM.article.content ?? "")
-                    .lineLimit(nil)
+                ImageView(
+                    url: URL(string: articleVM.article.picUri)!,
+                    placeholder: { Rectangle() },
+                    image: { Image(uiImage: $0).resizable() }
+                )
+                Text(articleVM.article.content ?? "").fixedSize(horizontal: false, vertical: true)
+                
+
                 Spacer()
             }
         }

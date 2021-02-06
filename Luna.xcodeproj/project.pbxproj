@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E1743ED25561BA4007B1C02 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1743EC25561BA4007B1C02 /* ImageCache.swift */; };
 		1E22DD782547A65200BACE5E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E22DD772547A65200BACE5E /* ContentView.swift */; };
 		1E22DD7A2547A65500BACE5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E22DD792547A65500BACE5E /* Assets.xcassets */; };
 		1E22DD7D2547A65500BACE5E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E22DD7C2547A65500BACE5E /* Preview Assets.xcassets */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E1743EC25561BA4007B1C02 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		1E22DD722547A65200BACE5E /* Luna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Luna.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E22DD772547A65200BACE5E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1E22DD792547A65500BACE5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				1E2B311B2551AA06007A4F75 /* GioveService.swift */,
 				1E2B31202551AA9E007A4F75 /* GioveEndpoint.swift */,
 				1E2B3148255217FF007A4F75 /* ImageLoader.swift */,
+				1E1743EC25561BA4007B1C02 /* ImageCache.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 			files = (
 				1EB7640F254B85BB00706370 /* ArticleRowView.swift in Sources */,
 				1E22DD782547A65200BACE5E /* ContentView.swift in Sources */,
+				1E1743ED25561BA4007B1C02 /* ImageCache.swift in Sources */,
 				1E2B3149255217FF007A4F75 /* ImageLoader.swift in Sources */,
 				1EB7641F254B8BAE00706370 /* Main.swift in Sources */,
 				1E2B31032551A4E4007A4F75 /* ArticlesListViewModel.swift in Sources */,

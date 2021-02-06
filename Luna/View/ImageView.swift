@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct AsyncImage<Placeholder: View>: View {
+struct ImageView<Placeholder: View>: View {
     @StateObject private var loader: ImageLoader
     private let placeholder: Placeholder
     private let image: (UIImage) -> Image
@@ -12,7 +12,7 @@ struct AsyncImage<Placeholder: View>: View {
     ) {
         self.placeholder = placeholder()
         self.image = image
-        _loader = StateObject(wrappedValue: ImageLoader(url: url, cache: Environment(\.imageCache).wrappedValue))
+        _loader = StateObject(wrappedValue: ImageLoader(url: url))
     }
     
     var body: some View {
@@ -23,7 +23,7 @@ struct AsyncImage<Placeholder: View>: View {
     private var content: some View {
         Group {
             if loader.image != nil {
-                image(loader.image!)
+                image(loader.image!).resizable().aspectRatio(contentMode: .fit)
             } else {
                 placeholder
             }

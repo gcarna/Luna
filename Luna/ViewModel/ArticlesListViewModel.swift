@@ -27,8 +27,8 @@ class ArticlesListViewModel: ObservableObject, GioveService {
                 case .finished:
                     break
                 }
-                
-            }) { (articles) in
+            }) {
+                (articles) in
                 self.articlesListViewModel = articles.map(ArticleViewModel.init)
             }
         cancellables.insert(cancellable)

@@ -12,8 +12,12 @@ struct ArticleRowView: View {
     var body: some View {
         NavigationLink(destination: DetailsView(articleVM: articleVM)){
             HStack {
-                ImageView(urlToImage: articleVM.article.picUri)
-                    .frame(width: 120.0)
+                ImageView(
+                    url: URL(string: articleVM.article.picUri)!,
+                    placeholder: { Rectangle()},
+                    image: { Image(uiImage: $0).resizable() }
+                )
+                .frame(width: 120.0)
                 Text(articleVM.article.title).font(.headline)
             }
         }
